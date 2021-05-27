@@ -1,13 +1,11 @@
-funcion cadastraAlunos()
+funcion cadastraAlunos() R
 
-funcion editarAlunos()
+funcion editarAlunos() J
 
-funcion cadastraNotas()
+funcion cadastraNotas() G
 
-funcion listarAlunos()
+funcion listarAlunos() J
 
-funcion verificaMatricula(matricula)
+funcion verificaMatricula() G
 
-funcion sair()
-
-funcion menu()
+funcion achaPosição() J

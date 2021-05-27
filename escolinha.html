@@ -8,6 +8,15 @@
 <body>
     <script>
 
+        let matriz = []
+        let oi1 = [7, 8, 9]
+            oi2 = [4, 5, 6]
+            oi3 = [1, 2, 3]
+        matriz.push(oi1)
+        matriz.push(oi2)
+        matriz.push(oi3)
+
+
         function calculaMedia(notas) {
             let soma = 0
             for(let i = 0; i < 3; i++){
@@ -15,6 +24,47 @@
             }
             return soma / 3
         } 
+
+        
+        function menu() {
+            let opção
+            
+            menu:
+            while(true){
+                opção = +prompt("1) Cadastrar aluno \n2) Editar informações do aluno \n3) Cadastrar notas de um aluno \n4) Listar alunos \n0) Sair")
+                let sairei = false
+                switch(opção){
+                    case 1:
+                        cadastraAlunos()
+                        break;
+                    case 2:
+                        editarAlunos()
+                        break;
+                    case 3:
+                        cadastraNotas()
+                        break;
+                    case 4:
+                        listarAlunos()
+                        break;
+                    case 0:
+                        break menu
+                    default:
+                        alert("Opção inválida")
+                }
+            }
+        }
+        
+        function achaPosição(){
+            let matricula = +prompt("Insira o número da matricula do aluno")
+            let posição
+            for(let i = 0; i < matriz.length; i++){
+                if(matricula == matriz[i]) posição = i
+            }
+        }
+        
+        
+        
+        menu()
 
     </script>
 </body>
