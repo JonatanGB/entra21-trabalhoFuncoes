@@ -1,0 +1,13 @@
+funcion cadastraAlunos()
+
+funcion editarAlunos()
+
+funcion cadastraNotas()
+
+funcion listarAlunos()
+
+funcion verificaMatricula(matricula)
+
+funcion sair()
+
+funcion menu()
