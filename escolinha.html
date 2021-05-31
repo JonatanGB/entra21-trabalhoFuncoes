@@ -7,14 +7,13 @@
 </head>
 <body>
     <script>
-
-        function calculaMedia(notas) {
-            let soma = 0
-            for(let i = 0; i < 3; i++){
-                soma = soma + notas[i]
+        function verificarMatricula() {
+            let verificar = +prompt("Digite a matrícula")
+            for(let i = 0; i < todosAlunos.length; i++) {            
+                if (verificar == todosAlunos[i][0]) return true
+                }
+                return false
             }
-            return soma / 3
-        } 
 
     </script>
 </body>
