@@ -11,6 +11,17 @@
         let todosAlunos = []
 
 
+
+function cadastraAlunos(todosAlunos){    
+  let matricula = +prompt("Insira a matrícula do aluno")
+  let alunos = []
+if (verificarMatricula() == true) return alert("matricula já existe")
+  alunos.push(matricula)
+  alunos.push(prompt("Digite o nome do aluno"))
+  matriz.push(alunos)
+}
+console.log(cadastraAlunos(todosAlunos))
+
         function verificarMatricula() {
             let verificar = +prompt("Digite a matrícula")
             for(let i = 0; i < todosAlunos.length; i++) {            
