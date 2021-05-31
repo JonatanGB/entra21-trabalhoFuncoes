@@ -1,48 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
+let todosAlunos = []
+        let aluno1 = [2021, "joao", 10, 10, 10, 10]
+        let aluno2 = [2020, "jonatan"]
+        todosAlunos.push(aluno1)
+        todosAlunos.push(aluno2)
 
-        let todosAlunos = []
-              
-        function mostraTela() {
-            let alunos = []
-            for (let linha = 0; linha < todosAlunos.length; linha++) {
-                let aluno = {
-                    matricula: matriz[linha][0],
-                    nome: matriz[linha][1],
-                    notal: matriz[linha][2],
-                    nota2: matriz[linha][3],
-                    nota3: matriz[linha][4],
-                    media: matriz[linha][5],
-                }
-            alunos.push(aluno)
-        }
-        console.table(alunos)
+        function calculaMedia(linha) {
+            let soma = todosAlunos[linha][3] + todosAlunos[linha][4] + todosAlunos[linha][5]
+            soma = soma / 3
+            todosAlunos[linha][5] = soma
+        } 
 
-        function cadastraAlunos(){    
-            let matricula = +prompt("Insira a matrícula do aluno")
-            let alunos = []
-            if (verificaMatricula(matricula) == true) return alert("matricula já existe")
-            alunos.push(matricula)
-            alunos.push(prompt("Digite o nome do aluno"))
-            todosAlunos.push(alunos)
-        }
-
-
-        function verificaMatricula(matricula) {
-            for(let i = 0; i < todosAlunos.length; i++) {            
-                if (matricula == todosAlunos[i][0]) return true
-                }
-                return false
-            }
         
-
         function menu() {
             let opção
             
@@ -92,15 +60,13 @@
         function cadastraNotas(){
             let notas = []
             let matricula = +prompt("Insira a matrícula do aluno")
-            if(verificaMatricula(matricula) == false) return alert("Matrícula inexistente")
+            if(verificaMatricula(matricula) == false) return alert("Essa matrícula não existe")
             let posicao = achaPosição(matricula)
             todosAlunos[posicao][2] = +prompt("Insira a primeira nota")
             todosAlunos[posicao][3] = +prompt("Insira a segunda nota")
             todosAlunos[posicao][4] = +prompt("Insira a terceira nota")
             todosAlunos[posicao][5] = (todosAlunos[posicao][2] + todosAlunos[posicao][3] + todosAlunos[posicao][4]) / 3
-
         }
 
-    </script>
-</body>
-</html>
+
+        menu()
