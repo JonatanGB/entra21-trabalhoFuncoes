@@ -11,25 +11,24 @@
         let todosAlunos = []
 
 
+        function cadastraAlunos(){    
+            let matricula = +prompt("Insira a matrícula do aluno")
+            let alunos = []
+            if (verificaMatricula(matricula) == true) return alert("matricula já existe")
+            alunos.push(matricula)
+            alunos.push(prompt("Digite o nome do aluno"))
+            todosAlunos.push(alunos)
+        }
 
-function cadastraAlunos(todosAlunos){    
-  let matricula = +prompt("Insira a matrícula do aluno")
-  let alunos = []
-if (verificarMatricula() == true) return alert("matricula já existe")
-  alunos.push(matricula)
-  alunos.push(prompt("Digite o nome do aluno"))
-  matriz.push(alunos)
-}
-console.log(cadastraAlunos(todosAlunos))
 
-        function verificarMatricula() {
-            let verificar = +prompt("Digite a matrícula")
+        function verificaMatricula(matricula) {
             for(let i = 0; i < todosAlunos.length; i++) {            
-                if (verificar == todosAlunos[i][0]) return true
+                if (matricula == todosAlunos[i][0]) return true
                 }
                 return false
             }
         
+
         function menu() {
             let opção
             
@@ -79,7 +78,7 @@ console.log(cadastraAlunos(todosAlunos))
         function cadastraNotas(){
             let notas = []
             let matricula = +prompt("Insira a matrícula do aluno")
-            if(verificaMatricula(matricula) == false) return alert("Essa matrícula não existe")
+            if(verificaMatricula(matricula) == false) return alert("Matrícula inexistente")
             let posicao = achaPosição(matricula)
             todosAlunos[posicao][2] = +prompt("Insira a primeira nota")
             todosAlunos[posicao][3] = +prompt("Insira a segunda nota")
