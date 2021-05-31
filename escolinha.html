@@ -7,9 +7,23 @@
 </head>
 <body>
     <script>
-        
-        let todosAlunos = []
 
+        let todosAlunos = []
+              
+        function mostraTela() {
+            let alunos = []
+            for (let linha = 0; linha < todosAlunos.length; linha++) {
+                let aluno = {
+                    matricula: matriz[linha][0],
+                    nome: matriz[linha][1],
+                    notal: matriz[linha][2],
+                    nota2: matriz[linha][3],
+                    nota3: matriz[linha][4],
+                    media: matriz[linha][5],
+                }
+            alunos.push(aluno)
+        }
+        console.table(alunos)
 
         function cadastraAlunos(){    
             let matricula = +prompt("Insira a matrícula do aluno")
@@ -84,10 +98,8 @@
             todosAlunos[posicao][3] = +prompt("Insira a segunda nota")
             todosAlunos[posicao][4] = +prompt("Insira a terceira nota")
             todosAlunos[posicao][5] = (todosAlunos[posicao][2] + todosAlunos[posicao][3] + todosAlunos[posicao][4]) / 3
+
         }
-
-
-        menu()
 
     </script>
 </body>
