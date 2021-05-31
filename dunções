@@ -4,7 +4,7 @@ funcion editarAlunos() J
 
 funcion cadastraNotas() G
 
-funcion listarAlunos() J
+funcion listarAlunos() N
 
 funcion verificaMatricula() G
 
