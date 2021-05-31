@@ -9,21 +9,24 @@
     <script>
 
         let todosAlunos = []
+
               
         function mostraTela() {
             let alunos = []
             for (let linha = 0; linha < todosAlunos.length; linha++) {
                 let aluno = {
-                    matricula: matriz[linha][0],
-                    nome: matriz[linha][1],
-                    notal: matriz[linha][2],
-                    nota2: matriz[linha][3],
-                    nota3: matriz[linha][4],
-                    media: matriz[linha][5],
+                    matricula: todosAlunos[linha][0],
+                    nome: todosAlunos[linha][1],
+                    notal: todosAlunos[linha][2],
+                    nota2: todosAlunos[linha][3],
+                    nota3: todosAlunos[linha][4],
+                    media: todosAlunos[linha][5]
                 }
             alunos.push(aluno)
         }
         console.table(alunos)
+        }
+
 
         function cadastraAlunos(){    
             let matricula = +prompt("Insira a matrícula do aluno")
@@ -40,7 +43,7 @@
                 if (matricula == todosAlunos[i][0]) return true
                 }
                 return false
-            }
+        }
         
 
         function menu() {
@@ -61,7 +64,7 @@
                         cadastraNotas()
                         break;
                     case 4:
-                        console.table(todosAlunos)
+                        mostraTela()
                         break;
                     case 0:
                         break menu
@@ -85,7 +88,7 @@
             if(verificaMatricula(matricula) == false) return alert("Matrícula inexistente")
             let linha = achaPosição(matricula)
 
-            todosAlunos[linha][1] = +prompt("Insira o novo nome do aluno") 
+            todosAlunos[linha][1] = prompt("Insira o novo nome do aluno") 
         }
             
         
@@ -100,6 +103,9 @@
             todosAlunos[posicao][5] = (todosAlunos[posicao][2] + todosAlunos[posicao][3] + todosAlunos[posicao][4]) / 3
 
         }
+
+        menu()
+
 
     </script>
 </body>
