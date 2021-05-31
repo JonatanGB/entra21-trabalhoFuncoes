@@ -11,7 +11,7 @@
 let matriz = []
 
 
-function cadastraAlunos(matriz){    
+function cadastraAlunos(todosAlunos){    
   let matricula = +prompt
   let alunos = []
 if (verificaMatricula() == true) return alert("matricula já existe")
@@ -19,7 +19,7 @@ if (verificaMatricula() == true) return alert("matricula já existe")
   alunos.push(prompt("Digite o nome do aluno"))
   matriz.push(alunos)
 }
-console.log(cadastraAlunos(matriz))
+console.log(cadastraAlunos(todosAlunos))
 
     </script>
 </body>
