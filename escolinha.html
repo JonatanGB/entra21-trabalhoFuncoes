@@ -8,18 +8,13 @@
 <body>
     <script>
 
-        let todosAlunos = []
-        let aluno1 = [2021, "joao", 10, 10, 10, 10]
-        let aluno2 = [2020, "jonatan"]
-        todosAlunos.push(aluno1)
-        todosAlunos.push(aluno2)
-
-        function calculaMedia(linha) {
-            let soma = todosAlunos[linha][3] + todosAlunos[linha][4] + todosAlunos[linha][5]
-            soma = soma / 3
-            todosAlunos[linha][5] = soma
-        } 
-
+        function verificarMatricula() {
+            let verificar = +prompt("Digite a matrícula")
+            for(let i = 0; i < todosAlunos.length; i++) {            
+                if (verificar == todosAlunos[i][0]) return true
+                }
+                return false
+            }
         
         function menu() {
             let opção
