@@ -13,19 +13,32 @@
               
         function mostraTela() {
             let alunos = []
+            let aluno
             for (let linha = 0; linha < todosAlunos.length; linha++) {
-                let aluno = {
+                if(todosAlunos[linha][3] == undefined){
+                    aluno = {
+                    matricula: todosAlunos[linha][0],
+                    nome: todosAlunos[linha][1],
+                    notal: "--",
+                    nota2: "--",
+                    nota3: "--",
+                    media: "--"
+                }
+                } else {
+                    aluno = {
                     matricula: todosAlunos[linha][0],
                     nome: todosAlunos[linha][1],
                     notal: todosAlunos[linha][2],
                     nota2: todosAlunos[linha][3],
                     nota3: todosAlunos[linha][4],
                     media: todosAlunos[linha][5]
+                    }
                 }
             alunos.push(aluno)
         }
         console.table(alunos)
         }
+
 
 
         function cadastraAlunos(){    
